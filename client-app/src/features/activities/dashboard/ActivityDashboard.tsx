@@ -14,7 +14,9 @@ const ActivityDashboard = ({activities}:Props) => {
             <ActivityList activities={activities} />
         </Grid.Column>
         <Grid.Column width='6'>
-            <ActivityDetails activity={activities[0]} />
+            {activities[0] &&
+                <ActivityDetails activity={activities[0]} />
+            }
         </Grid.Column>
     </Grid>
   )

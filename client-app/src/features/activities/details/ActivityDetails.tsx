@@ -7,7 +7,7 @@ interface Props {
 
 const ActivityDetails = ({activity}: Props) => {
   return (
-    <Card>
+    <Card fluid>
         <Image src={`/assets/categoryImages/${activity.category}.jpg`} />
         <CardContent>
             <CardHeader>{activity.title}</CardHeader>
