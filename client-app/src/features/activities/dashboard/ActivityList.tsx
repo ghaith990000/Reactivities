@@ -3,8 +3,9 @@ import { Activity } from "../../../app/models/activity"
 
 interface Props {
     activities: Activity[];
+    selectActivity: (id: string) => void;
 }
-const ActivityList = ({activities}:Props) => {
+const ActivityList = ({activities, selectActivity}:Props) => {
   return (
     <Segment>
         <Item.Group divided>
@@ -18,7 +19,7 @@ const ActivityList = ({activities}:Props) => {
                             <div>{activity.city}, {activity.venue}</div>
                         </Item.Description>
                         <Item.Extra>
-                            <Button floated="right" content="View" color='blue'/>
+                            <Button onClick={()=> selectActivity(activity.id)} floated="right" content="View" color='blue'/>
                             <Label basic content={activity.category} />
                         </Item.Extra>
                     </Item.Content>
