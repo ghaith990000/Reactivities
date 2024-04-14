@@ -9,10 +9,11 @@ import LoadingComponent from "../../../app/layout/LoadingComponent";
 
 const ActivityDashboard = () => {
     const {activityStore} = useStore();
+    const {loadActivities, activityRegistery} = activityStore;
 
   useEffect(()=>{
-    activityStore.loadActivities();
-  }, [activityStore]);
+    loadActivities();
+  }, [loadActivities, activityRegistery.size]);
   
 
 
