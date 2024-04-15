@@ -1,6 +1,8 @@
 using API.Extensions;
 using Application.Activities;
 using Application.Core;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -24,6 +26,8 @@ builder.Services.AddCors(opt => {
 });
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(List.Handler).Assembly));
 builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<Create>();
 // builder.Services.AddApplicationServices(builder.Configuration);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
