@@ -4,13 +4,13 @@ interface Props {
     errors: string[];
 }
 
-const ValidationError = ({errors}: Props) => {
+const ValidationErrors = ({errors}: Props) => {
   return (
-    <Message error>
+    <Message negative>
         {errors && (
             <Message.List>
-                {errors.map((err: string, i) => (
-                    <Message.Item key={i}>{err}</Message.Item>
+                {errors.map((error: string, i) => (
+                    <Message.Item key={i}>{error}</Message.Item>
                 ))}
             </Message.List>
         )}
@@ -18,4 +18,4 @@ const ValidationError = ({errors}: Props) => {
   )
 }
 
-export default ValidationError
+export default ValidationErrors
